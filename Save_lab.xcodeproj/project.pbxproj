@@ -18,6 +18,11 @@
 		858E6AB02342994A0046F7EE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6AAF2342994A0046F7EE /* Error.swift */; };
 		858E6AB223429D360046F7EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6AB123429D360046F7EE /* NetworkManager.swift */; };
 		858E6AB423429E350046F7EE /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6AB323429E350046F7EE /* Secrets.swift */; };
+		858E6AB62342A1310046F7EE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6AB52342A1310046F7EE /* APIManager.swift */; };
+		858E6AB82342A8080046F7EE /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6AB72342A8080046F7EE /* ImageManager.swift */; };
+		858E6ABC234396BB0046F7EE /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6ABB234396BB0046F7EE /* SaveManager.swift */; };
+		858E6ABE234396C50046F7EE /* Saving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6ABD234396C50046F7EE /* Saving.swift */; };
+		858E6AC0234399F60046F7EE /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E6ABF234399F60046F7EE /* ImageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		858E6AAF2342994A0046F7EE /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		858E6AB123429D360046F7EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		858E6AB323429E350046F7EE /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		858E6AB52342A1310046F7EE /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		858E6AB72342A8080046F7EE /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		858E6ABB234396BB0046F7EE /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
+		858E6ABD234396C50046F7EE /* Saving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saving.swift; sourceTree = "<group>"; };
+		858E6ABF234399F60046F7EE /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +102,13 @@
 				858E6AB323429E350046F7EE /* Secrets.swift */,
 				858E6AB123429D360046F7EE /* NetworkManager.swift */,
 				858E6AAF2342994A0046F7EE /* Error.swift */,
+				858E6AB72342A8080046F7EE /* ImageManager.swift */,
+				858E6ABB234396BB0046F7EE /* SaveManager.swift */,
+				858E6ABD234396C50046F7EE /* Saving.swift */,
 				858E6AAD234299340046F7EE /* ImageCollectionViewCell.swift */,
+				858E6AB52342A1310046F7EE /* APIManager.swift */,
 				858E6A8F234290640046F7EE /* ViewController.swift */,
+				858E6ABF234399F60046F7EE /* ImageDetailViewController.swift */,
 				858E6A91234290640046F7EE /* Main.storyboard */,
 				858E6A94234290650046F7EE /* Assets.xcassets */,
 				858E6A96234290650046F7EE /* LaunchScreen.storyboard */,
@@ -212,13 +227,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858E6AB62342A1310046F7EE /* APIManager.swift in Sources */,
 				858E6AB223429D360046F7EE /* NetworkManager.swift in Sources */,
 				858E6A90234290640046F7EE /* ViewController.swift in Sources */,
+				858E6AB82342A8080046F7EE /* ImageManager.swift in Sources */,
+				858E6ABC234396BB0046F7EE /* SaveManager.swift in Sources */,
 				858E6AB423429E350046F7EE /* Secrets.swift in Sources */,
 				858E6A8C234290640046F7EE /* AppDelegate.swift in Sources */,
+				858E6AC0234399F60046F7EE /* ImageDetailViewController.swift in Sources */,
 				858E6AAE234299340046F7EE /* ImageCollectionViewCell.swift in Sources */,
 				858E6AB02342994A0046F7EE /* Error.swift in Sources */,
 				858E6A8E234290640046F7EE /* SceneDelegate.swift in Sources */,
+				858E6ABE234396C50046F7EE /* Saving.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
