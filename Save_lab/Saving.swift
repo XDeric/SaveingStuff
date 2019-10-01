@@ -12,11 +12,11 @@ class PictureSaveHelper {
     private init(){}
     static let saveHelper = PictureSaveHelper()
 
-    func savePicture(picture: Image) throws {
+    func savePicture(picture: Hit) throws {
         try persistenceHelper.save(newElement: picture)
     }
-    private let persistenceHelper = PersistenceHelper<Image>(fileName: "saveImage.plist")
-    func getImage()throws -> [Image]{
+    private let persistenceHelper = PersistenceHelper<Hit>(fileName: "saveImage.plist")
+    func getImage()throws -> [Hit]{
         return try persistenceHelper.getObjects()
     }
 

@@ -17,10 +17,10 @@ class ImageDetailViewController: UIViewController {
     @IBOutlet weak var likes: UILabel!
     
     @IBAction func favorite(_ sender: UIButton) {
-//        do{
-//           try PictureSaveHelper.saveHelper.savePicture(picture: <#T##Image#>)
-//
-//        } catch {fatalError(error.localizedDescription)}
+        do{
+            try PictureSaveHelper.saveHelper.savePicture(picture: picture)
+            
+        } catch {fatalError(error.localizedDescription)}
     }
     override func viewDidLoad() {
         ImageHelper.shared.getImage(urlStr: picture.largeImageURL ) { (result) in
