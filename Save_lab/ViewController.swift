@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     var images = [Hit](){
         didSet{
             self.collectionOutlet.reloadData()
@@ -17,8 +17,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionOutlet: UICollectionView!
-    
     var searchString: String? = nil
+    
     var imageSearchResults: [Hit]{
         guard let _ = searchString else{
             return images
@@ -31,12 +31,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchBar.resignFirstResponder()
         searchString = searchBar.text
+        loadData(searching: searchString)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageSearchResults.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 340, height: 250)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -53,24 +57,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     }
                 }
             }
-            cell.user.text = imageStuff.user
             return cell
         }
         return UICollectionViewCell()
     }
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         collectionOutlet.dataSource = self
         collectionOutlet.delegate = self
+        searchBar.delegate = self
         // Do any additional setup after loading the view.
     }
     
-    private func loadData() {
-        APIManager.manager.getImage(search: searchString ?? "flower"){ (result) in
+    private func loadData(searching: String?) {
+        APIManager.manager.getImage(search: searching ?? "puupy"){ (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let picture):
@@ -81,5 +82,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard var ImageVC = segue.destination as? ImageDetailViewController,
+            let indexPath = collectionOutlet.indexPath(for: sender as! UICollectionViewCell)
+            else {
+                fatalError("no segue")
+        }
+        let path = images[indexPath.row]
+        ImageVC.picture = path
+    }
+    
 }
+
+
 

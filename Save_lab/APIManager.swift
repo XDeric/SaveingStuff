@@ -17,6 +17,7 @@ struct Hit: Codable {
     let largeImageURL: String
     let tags: String
     let user: String
+    let likes: Int 
 }
 
 final class APIManager {
@@ -42,7 +43,7 @@ final class APIManager {
             case .success(let data):
                 do {
                     let imageData = try JSONDecoder().decode(Image.self, from: data)
-                    completionHandler(.success(imageData.hits ?? []))
+                    completionHandler(.success(imageData.hits ))
                 } catch {
                     print(error)
                     completionHandler(.failure(.couldNotParseJSON(rawError: error)))
