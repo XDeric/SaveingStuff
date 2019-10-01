@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+    
     var images = [Hit](){
         didSet{
             self.collectionOutlet.reloadData()
@@ -19,8 +20,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var collectionOutlet: UICollectionView!
     var searchString: String? = nil
     
-    var imageSearchResults: [Hit]{
-        guard let _ = searchString else{
+    var imageSearchResults: [Hit] {
+        guard let _ = searchString else {
             return images
         }
         guard searchString != "" else {
@@ -89,10 +90,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             else {
                 fatalError("no segue")
         }
-        let path = images[indexPath.row]
+        let path = imageSearchResults[indexPath.row]
         ImageVC.picture = path
     }
-    
 }
 
 
